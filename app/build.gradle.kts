@@ -3,6 +3,7 @@ plugins{
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -50,6 +51,21 @@ dependencies{
 
     //Lifecycle Viewmodel Compose
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler) // Use ksp for the compiler
+    implementation(libs.hilt.navigation.compose)
+
+    // Navigation
+    implementation(libs.navigation.compose)
+
+    // Google Maps & Location
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.location)
+
+    // Coil (for Image Loading)
+    implementation(libs.coil.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
