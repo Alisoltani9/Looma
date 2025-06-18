@@ -10,7 +10,7 @@ android{
     namespace = "soltani.code.looma"
     compileSdk = 35
 
-    defaultConfig {
+    defaultConfig{
         applicationId = "soltani.code.looma"
         minSdk = 24
         targetSdk = 35
@@ -20,7 +20,7 @@ android{
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    buildTypes{
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -29,24 +29,27 @@ android{
             )
         }
     }
-    compileOptions {
+    compileOptions{
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
+    kotlinOptions{
         jvmTarget = "11"
     }
-    buildFeatures {
+    buildFeatures{
         compose = true
     }
 }
 
 dependencies{
 
+    //Room Libraries
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    //Lifecycle Viewmodel Compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
